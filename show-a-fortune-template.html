@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fortune Teller</title>
+
+    <style>
+      body {
+        margin: 0 auto;
+        max-width: 40em;
+        width: 88%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fortune Teller</h1>
+
+    <p>
+      <button>Get Your Fortune</button>
+    </p>
+
+    <div id="fortune"></div>
+    <div id="tomorrow"></div>
+    <div id="today"></div>
+
+    <script>
+      // Get the DOM elements
+      let btn = document.querySelector("button");
+      let fortune = document.querySelector("#fortune");
+      // let tomorrow = document.querySelector("#tomorrow");
+      // let today = document.querySelector("#today");
+
+      /**
+       * Get the fortune and render it into the DOM
+       */
+      function getFortune() {
+        fortune.textContent = `You're going to have a wonderful day!`;
+        // tomorrow.textContent = `Tomorrow has 24 hours`;
+        // today.textContent = `Today started with morning`;
+      }
+
+      // Listen for clicks on the button
+      btn.addEventListener("click", getFortune);
+    </script>
+  </body>
+</html>

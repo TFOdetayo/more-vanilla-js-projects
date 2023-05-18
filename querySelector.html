@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Query Selecctor</title>
+
+    <!-- styles -->
+    <style>
+      body {
+        margin: 0 auto;
+        max-width: 40em;
+        width: 88%;
+      }
+
+      .bg-red {
+        background-color: #cb070e;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      <button data-snack="chips">1</button>
+      <button class="bg-red">2</button>
+      <button>3</button>
+      <button data-snack>4</button>
+      <button class="bg-red" data-snack="carrots">5</button>
+    </p>
+
+    <script>
+      // The first button
+      let button = document.querySelector("button");
+      console.log(button);
+
+      // The first element with the .bg-red class
+      let red = document.querySelector(".bg-red");
+      console.log(red);
+
+      // The first element with a data attribute of snack equal to
+      let carrots = document.querySelector('[data-snack="carrots"]');
+      console.log(carrots);
+
+      // An element that doesn't exist
+      let none = document.querySelector(".bg-orange");
+      console.log(none);
+
+      // verify if element exists before doing anything with it
+      if (none) {
+        // do something...
+        console.log("This will not show up...");
+      }
+    </script>
+  </body>
+</html>

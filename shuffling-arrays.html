@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shuffling Arrays</title>
+
+    <style>
+      body {
+        margin: 0 auto;
+        max-width: 40em;
+        width: 88%;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function shuffle(array) {
+        let currentIndex = array.length;
+        let temporaryValue, randomIndex;
+
+        // while there remain elements to shuffle...
+        while (0 !== currentIndex) {
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+
+          // And swap it with the current element.
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+        return array;
+      }
+
+      let lunch = ["sandwich", "soda", "chips", "cookie"];
+
+      // Shuffles the lunch array
+      shuffle(lunch);
+      console.log(lunch);
+
+      // Create a new, shuffled array from lunch
+      let shuffledLunch = shuffle(Array.from(lunch));
+      console.log(shuffledLunch);
+    </script>
+  </body>
+</html>
